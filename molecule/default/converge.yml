@@ -1,0 +1,9 @@
+---
+- name: Converge playbook
+  hosts: all
+  gather_facts: true
+
+  tasks:
+    - name: Include the main role
+      include_role:
+        name: "ansible-role-docker"

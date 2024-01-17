@@ -1,0 +1,16 @@
+---
+- name: Prepare playbook
+  hosts: all
+  gather_facts: true
+
+  tasks:
+    # - name: Install Python
+    #   raw: test -e /usr/bin/python || (apt -y update && apt install -y python)
+
+    - name: Install Docker dependencies
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          # - curl
+          # - software-properties-common

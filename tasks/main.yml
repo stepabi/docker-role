@@ -1,0 +1,9 @@
+---
+# tasks file for ansible-role-docker
+- name: install docker on ubuntu
+  ansible.builtin.import_tasks: docker_ubuntu_install.yml
+  when: 
+    - ansible_distribution == "Ubuntu"
+    - ansible_distribution_major_version|int >= 22
+  tags:
+    - docker_ubuntu_install_22
